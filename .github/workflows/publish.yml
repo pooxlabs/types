@@ -1,0 +1,42 @@
+name: Publish
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Trigger only on version tags like v1.0.0
+
+permissions:
+  id-token: write
+  packages: write
+  contents: read
+
+jobs:
+  publish:
+    name: Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout - Repository
+        uses: actions/checkout@v4
+
+      - name: Setup - Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Upgrade - NPM
+        run: npm install -g npm@latest
+
+      - name: Authenticate - NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ~/.npmrc
+
+      - name: Authenticate - Github
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+
+      - name: Install - Dependencies
+        run: npm i
+
+      - name: Publish - NPM
+        run: npm publish --access public --provenance
+
+      - name: Publish - Github
+        run: npm publish --registry=https://npm.pkg.github.com/
