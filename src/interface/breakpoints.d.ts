@@ -81,19 +81,19 @@ type ContainerBreakpoint =
  * - `base` → `*` — applies without container query
  *
  * **Query**
- * - `@3xs` → `@3xs:*` — @container (width >= 16rem)
- * - `@2xs` → `@2xs:*` — @container (width >= 18rem)
- * - `@xs` → `@xs:*` — @container (width >= 20rem)
- * - `@sm` → `@sm:*` — @container (width >= 24rem)
- * - `@md` → `@md:*` — @container (width >= 28rem)
- * - `@lg` → `@lg:*` — @container (width >= 32rem)
- * - `@xl` → `@xl:*` — @container (width >= 36rem)
- * - `@2xl` → `@2xl:*` — @container (width >= 42rem)
- * - `@3xl` → `@3xl:*` — @container (width >= 48rem)
- * - `@4xl` → `@4xl:*` — @container (width >= 56rem)
- * - `@5xl` → `@5xl:*` — @container (width >= 64rem)
- * - `@6xl` → `@6xl:*` — @container (width >= 72rem)
- * - `@7xl` → `@7xl:*` — @container (width >= 80rem)
+ * - `@max-3xs` → `@max-3xs:*` — @container (width < 16rem)
+ * - `@max-2xs` → `@max-2xs:*` — @container (width < 18rem)
+ * - `@max-xs` → `@max-xs:*` — @container (width < 20rem)
+ * - `@max-sm` → `@max-sm:*` — @container (width < 24rem)
+ * - `@max-md` → `@max-md:*` — @container (width < 28rem)
+ * - `@max-lg` → `@max-lg:*` — @container (width < 32rem)
+ * - `@max-xl` → `@max-xl:*` — @container (width < 36rem)
+ * - `@max-2xl` → `@max-2xl:*` — @container (width < 42rem)
+ * - `@max-3xl` → `@max-3xl:*` — @container (width < 48rem)
+ * - `@max-4xl` → `@max-4xl:*` — @container (width < 56rem)
+ * - `@max-5xl` → `@max-5xl:*` — @container (width < 64rem)
+ * - `@max-6xl` → `@max-6xl:*` — @container (width < 72rem)
+ * - `@max-7xl` → `@max-7xl:*` — @container (width < 80rem)
  *
  * **Custom**
  * - `@max-value` → `@max-<value>:*` — custom-defined max breakpoint
@@ -109,5 +109,6 @@ type MaxContainerBreakpoint =
 export type {
   Breakpoint,
   MaxBreakpoint,
-  ContainerBreakpoint
+  ContainerBreakpoint,
+  MaxContainerBreakpoint
 }
