@@ -1,0 +1,40 @@
+{
+  "name"              : "@pooxlabs/types",
+  "description"       : "A Centralized type definitions for the Poox ecosystem. Provides a unified semantic layer across interface logic, core modules, and styling abstractions—supporting modular design, Tailwind integration, and long-term architectural consistency.",
+  "keywords"          : ["types","consistency","semantics","architecture","structure","foundation","abstraction","type-safe","schemas","type","modularity","stability","interfaces","definitions","reusability","type-definitions","type-library","shared-types","cohesion"],
+  "license"           : "MIT",
+  "homepage"          : "https://poox.io/",
+  "version"           : "0.0.1",
+
+  "author"            : {
+    "name"      : "Selçuk Çukur",
+    "email"     : "hk@selcukcukur.com.tr",
+    "url"       : "https://selcukcukur.com.tr"
+  },
+
+  "bugs"              : {
+    "email"   : "security@poox.io",
+    "url"     : "https://github.com/pooxlabs/poox/issues"
+  },
+
+  "devDependencies"   : {
+    "typescript"                : "^5.9.3"
+  },
+
+  "exports"           : {
+    "."        : "./src/index.d.ts"
+  },
+
+  "publishConfig"     : {
+    "access"   : "public"
+  },
+  "publisher"         : {
+    "type" : "github",
+    "user" : "pooxlabs",
+    "repo" : "types"
+  },
+  "repository"        : {
+    "type"  : "git",
+    "url"   : "git+https://github.com/pooxlabs/types.git"
+  }
+}
