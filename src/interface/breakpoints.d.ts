@@ -16,8 +16,8 @@
  */
 type Breakpoint =
   | "base"
-  | "sm" | "md" | "lg"
-  | "xl" | "2xl"
+  | "sm" | "md" | "lg" | "xl"
+  | "2xl"
   | `${string}`
 
 /**
@@ -39,11 +39,44 @@ type Breakpoint =
  */
 type MaxBreakpoint =
   | "base"
-  | "max-sm" | "max-md" | "max-lg"
-  | "max-xl" | "max-2xl"
+  | "max-sm" | "max-md" | "max-lg" | "max-xl"
+  | "max-2xl"
   | `max-${string}` | `max-[${string}]`
+
+/**
+ * The breakpoint keys used for container responsive traits.
+ *
+ * **Syntax**
+ * - `base` → `*` — applies without container query
+ *
+ * **Query**
+ * - `@3xs` → `@3xs:*` — @container (width >= 16rem)
+ * - `@2xs` → `@2xs:*` — @container (width >= 18rem)
+ * - `@xs` → `@xs:*` — @container (width >= 20rem)
+ * - `@sm` → `@sm:*` — @container (width >= 24rem)
+ * - `@md` → `@md:*` — @container (width >= 28rem)
+ * - `@lg` → `@lg:*` — @container (width >= 32rem)
+ * - `@xl` → `@xl:*` — @container (width >= 36rem)
+ * - `@2xl` → `@2xl:*` — @container (width >= 42rem)
+ * - `@3xl` → `@3xl:*` — @container (width >= 48rem)
+ * - `@4xl` → `@4xl:*` — @container (width >= 56rem)
+ * - `@5xl` → `@5xl:*` — @container (width >= 64rem)
+ * - `@6xl` → `@6xl:*` — @container (width >= 72rem)
+ * - `@7xl` → `@7xl:*` — @container (width >= 80rem)
+ *
+ * **Custom**
+ * - `@value` → `@<value>:*` — custom-defined breakpoint
+ */
+type ContainerBreakpoint =
+  | "base"
+  | "@3xs" | "@2xs" | "@xs"
+  | "@sm" | "@md" | "@lg" | "@xl"
+  | "@2xl" | "@3xl" | "@4xl" | "@5xl" | "@6xl" | "@7xl"
+  | `@${string}`
 
 export type {
   Breakpoint,
-  MaxBreakpoint
+  MaxBreakpoint,
+
+  ContainerBreakpoint
 }
