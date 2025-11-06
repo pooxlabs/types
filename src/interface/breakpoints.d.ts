@@ -12,7 +12,7 @@
  * - `2xl` → `2xl:*` — @media (width >= 96rem)
  *
  * **Custom**
- * - `value` → `<value>:*` — custom-defined breakpoint
+ * - `value` → `<value>:*` — custom-defined breakpoint (e.g. `srylius`)
  */
 type Breakpoint =
   | "base"
@@ -34,8 +34,8 @@ type Breakpoint =
  * - `max-2xl` → `max-2xl:*` — @media (width < 96rem)
  *
  * **Custom**
- * - `max-value` → `max-<value>:*` — custom-defined max breakpoint
- * - `max-[value]` → `max-[value]:*` — arbitrary fixed max breakpoint
+ * - `max-value` → `max-<value>:*` — custom-defined max breakpoint (e.g. `max-srylius`)
+ * - `max-[value]` → `max-[value]:*` — arbitrary fixed max breakpoint (e.g. `max-[480px]`)
  */
 type MaxBreakpoint =
   | "base"
@@ -65,7 +65,7 @@ type MaxBreakpoint =
  * - `@7xl` → `@7xl:*` — @container (width >= 80rem)
  *
  * **Custom**
- * - `@value` → `@<value>:*` — custom-defined breakpoint
+ * - `@value` → `@<value>:*` — custom-defined breakpoint (e.g. `@srylius`)
  */
 type ContainerBreakpoint =
   | "base"
@@ -78,7 +78,7 @@ type ContainerBreakpoint =
  * The max breakpoint keys used for container responsive traits.
  *
  * **Syntax**
- * - `base` → `*` — applies without container query
+ * - `base` → `*` — applies without max container query
  *
  * **Query**
  * - `@max-3xs` → `@max-3xs:*` — @container (width < 16rem)
@@ -96,8 +96,8 @@ type ContainerBreakpoint =
  * - `@max-7xl` → `@max-7xl:*` — @container (width < 80rem)
  *
  * **Custom**
- * - `@max-value` → `@max-<value>:*` — custom-defined max breakpoint
- * - `@max-[value]` → `@max-[value]:*` — arbitrary fixed max breakpoint
+ * - `@max-value` → `@max-<value>:*` — custom-defined breakpoint (e.g. `@max-srylius`)
+ * - `@max-[value]` → `@max-[value]:*` — arbitrary fixed max breakpoint (e.g. `@max-[480px]`)
  */
 type MaxContainerBreakpoint =
   | "base"
@@ -108,7 +108,7 @@ type MaxContainerBreakpoint =
 
 export type {
   Breakpoint,
-  MaxBreakpoint,
   ContainerBreakpoint,
+  MaxBreakpoint,
   MaxContainerBreakpoint
 }
