@@ -76,6 +76,17 @@ type BreakpointRange =
   | `${string}:max-${string}`
 
 /**
+ * Min breakpoint keys used for media query-based responsive traits.
+ *
+ * **Custom**
+ * - `min-[value]` → `min-[value]:*` — arbitrary fixed min breakpoint (e.g. `min-[480px]`)
+ *
+ * ---
+ * _Use for arbitrary values not defined in your theme (e.g. `min-[480px]`)_
+ */
+type BreakpointMin = `min-${string}`
+
+/**
  * Container breakpoint keys used for container query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#container-queries))
  *
  * **Syntax**
@@ -251,15 +262,28 @@ type BreakpointContainerMax =
   | "@max-2xl" | "@max-3xl" | "@max-4xl" | "@max-5xl" | "@max-6xl" | "@max-7xl"
   | `@max-${string}`
 
+/**
+ * Min container breakpoint keys used for container query-based responsive traits.
+ *
+ * **Custom**
+ * - `@min-[value]` → `@min-[value]:*` — arbitrary fixed min breakpoint (e.g. `@min-[480px]`)
+ *
+ * ---
+ * _Use for arbitrary values not defined in your theme (e.g. `@min-[480px]`)_
+ */
+type BreakpointContainerMin = `@min-${string}`
+
 // Exports
 export type {
   // Media
   Breakpoint,
   BreakpointMax,
+  BreakpointMin,
   BreakpointRange,
 
   // Container
   BreakpointContainer,
+  BreakpointContainerMax,
+  BreakpointContainerMin,
   BreakpointContainerRange,
-  BreakpointContainerMax
 }
