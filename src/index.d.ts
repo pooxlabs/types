@@ -17,6 +17,7 @@ export type {
 export type {
   // Common
   ResponsiveValue,
+  ResponsiveScope,
 
   // Media
   Responsive,

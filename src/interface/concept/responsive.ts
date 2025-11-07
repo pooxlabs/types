@@ -254,10 +254,74 @@ type ContainerResponsiveQuery<T extends ResponsiveValue> =
   | ContainerResponsiveMin<T>
   | ContainerResponsiveRange<T>
 
+/**
+ * Responsive trait mapping across both media and container queries.
+ *
+ * **Syntax**
+ * - `value` — applies without media or container query
+ *
+ * **Query (Media)**
+ * - `{ "base": value }` — applies without media or container query
+ * - `{ "sm": value }` — applies at specific media breakpoints
+ * - `{ "max-md": value }` — applies below a max breakpoint
+ * - `{ "min-[480px]": value }` — applies above a min breakpoint
+ * - `{ "sm:max-xl": value }` — applies within a media breakpoint range
+ *
+ * **Query (Container)**
+ * - `{ "base": value }` — applies without media or container query
+ * - `{ "@sm": value }` — applies at specific container breakpoints
+ * - `{ "@max-md": value }` — applies below a max breakpoint
+ * - `{ "@min-[480px]": value }` — applies above a min breakpoint
+ * - `{ "@sm:@max-xl": value }` — applies within a container breakpoint range
+ *
+ * **Usage**
+ * ```tsx
+ * // Static value (no query)
+ * <Component justifyContent="center" />
+ *
+ * // Media base query (no query)
+ * <Component justifyContent={{ "base": "start" }} />
+ *
+ * // Media query per breakpoint
+ * <Component justifyContent={{ "sm": "center" }} />
+ *
+ * // Media max query
+ * <Component justifyContent={{ "max-md": "end" }} />
+ *
+ * // Media min query (arbitrary)
+ * <Component justifyContent={{ "min-[480px]": "start" }} />
+ *
+ * // Media range query
+ * <Component justifyContent={{ "sm:max-xl": "between" }} />
+ *
+ * // Container query per breakpoint
+ * <Component justifyContent={{ "@lg": "center" }} />
+ *
+ * // Container max query
+ * <Component justifyContent={{ "@max-md": "end-safe" }} />
+ *
+ * // Container min query (arbitrary)
+ * <Component justifyContent={{ "@min-[600px]": "start" }} />
+ *
+ * // Container range query
+ * <Component justifyContent={{ "@sm:@max-xl": "evenly" }} />
+ *
+ * // Sugar-style trait group
+ * <Component justify={{
+ *   "base": { content: "center", items: "stretch" },
+ *   "@lg": { content: "end", self: "auto" }
+ * }} />
+ * ```
+ */
+type ResponsiveScope<T extends ResponsiveValue> =
+  | ResponsiveQuery<T>
+  | ContainerResponsiveQuery<T>
+
 // Exports
 export type {
   // Common
   ResponsiveValue,
+  ResponsiveScope,
 
   // Media
   Responsive,
