@@ -1,53 +1,54 @@
 /**
- * The breakpoints used for responsive traits.
+ * Breakpoint keys used for media query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#working-mobile-first))
  *
  * **Syntax**
  * - `base` → `*` — applies without media query
  *
  * **Query**
- * - `sm` → `sm:*` — @media (width >= 40rem)
- * - `md` → `md:*` — @media (width >= 48rem)
- * - `lg` → `lg:*` — @media (width >= 64rem)
- * - `xl` → `xl:*` — @media (width >= 80rem)
- * - `2xl` → `2xl:*` — @media (width >= 96rem)
+ * - `sm` → `@media (width >= 40rem)` — applies at ≥ 40rem
+ * - `md` → `@media (width >= **48rem**)` — applies at ≥ 48rem
+ * - `lg` → `@media (width >= **64rem**)` — applies at ≥ 64rem
+ * - `xl` → `@media (width >= **80rem**)` — applies at ≥ 80rem
+ * - `2xl` → `@media (width >= **96rem**)` — applies at ≥ 96rem
  *
  * **Custom**
- * - `value` → `<value>:*` — custom-defined breakpoint (e.g. `srylius`)
+ * - `value` → `value:*` — custom-defined breakpoint (e.g. `srylius`)
+ *
+ * ---
+ * _Custom keys (e.g. "srylius") are supported if defined in your configuration file._
  */
-type Breakpoint =
-  | "base"
-  | "sm" | "md" | "lg" | "xl"
-  | "2xl"
-  | `${string}`
+type Breakpoint = "base" | "sm" | "md" | "lg" | "xl" | "2xl" | `${string}`
 
 /**
- * The max breakpoint keys used for responsive traits.
+ * Max breakpoint keys used for media query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range))
  *
  * **Syntax**
  * - `base` → `*` — applies without media query
  *
  * **Query**
- * - `max-sm` → `max-sm:*` — @media (width < 40rem)
- * - `max-md` → `max-md:*` — @media (width < 48rem)
- * - `max-lg` → `max-lg:*` — @media (width < 64rem)
- * - `max-xl` → `max-xl:*` — @media (width < 80rem)
- * - `max-2xl` → `max-2xl:*` — @media (width < 96rem)
+ * - `max-sm` → `max-sm:*` — @media (width < **40rem**)
+ * - `max-md` → `max-md:*` — @media (width < **48rem**)
+ * - `max-lg` → `max-lg:*` — @media (width < **64rem**)
+ * - `max-xl` → `max-xl:*` — @media (width < **80rem**)
+ * - `max-2xl` → `max-2xl:*` — @media (width < **96rem**)
  *
  * **Custom**
- * - `max-value` → `max-<value>:*` — custom-defined max breakpoint (e.g. `max-srylius`)
+ * - `max-value` → `max-value:*` — custom-defined max breakpoint (e.g. `max-srylius`)
  * - `max-[value]` → `max-[value]:*` — arbitrary fixed max breakpoint (e.g. `max-[480px]`)
+ *
+ * ---
+ * _Custom keys (e.g. "srylius") are supported if defined in your configuration file._
  */
-type MaxBreakpoint =
-  | "base"
+type BreakpointMax =
   | "max-sm" | "max-md" | "max-lg" | "max-xl"
   | "max-2xl"
   | `max-${string}`
 
 /**
- * Breakpoint range keys used for responsive traits between two media query widths.
+ * Breakpoint range keys used for media queries spanning two widths ([See also](https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range))
  *
  * **Syntax**
- * - `value:max-value` → `value:max-value:*` — @media (width >= **value**) and @media (width < **max-value**)
+ * - `base` → `*` — applies without container query
  *
  * **Query**
  * - `sm:max-md` → `sm:max-md:*` — @media (width >= **40rem**) and @media (width < **48rem**)
@@ -62,104 +63,110 @@ type MaxBreakpoint =
  * - `xl:max-2xl` → `xl:max-2xl:*` — @media (width >= **80rem**) and @media (width < **96rem**)
  *
  * **Custom**
- * - `value:max-value` → `value-max-<value>:*` — custom-defined breakpoint range (e.g. `srylius:max-srylius`)
- * - `value:max-[value]` → `value-max-[value]:*` — arbitrary fixed breakpoint range (e.g. `srylius:max-[480px]`)
+ * - `value:max-value` → `value:max-value:*` — custom-defined breakpoint range (e.g. `srylius:max-srylius`)
+ * - `value:max-[value]` → `value:max-[value]:*` — arbitrary fixed breakpoint range (e.g. `srylius:max-[480px]`)
+ *
+ * ---
+ * _Custom keys (e.g. "srylius","max-srylius") are supported if defined in your configuration file._
  */
-type BetweenBreakpoint =
+type BreakpointRange =
   | "sm:max-md" | "sm:max-lg" | "sm:max-xl" | "sm:max-2xl" | `sm:max-${string}`
   | "md:max-lg" | "md:max-xl" | "md:max-2xl" | `md:max-${string}`
   | "lg:max-xl" | "lg:max-2xl" | `lg:max-${string}`
   | `${string}:max-${string}`
 
 /**
- * The breakpoint keys used for container responsive traits.
+ * Container breakpoint keys used for container query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#container-queries))
  *
  * **Syntax**
  * - `base` → `*` — applies without container query
  *
  * **Query**
- * - `@3xs` → `@3xs:*` — @container (width >= 16rem)
+ * - `@3xs` → `@3xs:*` — @container (width >= **16rem**)
  * - `@2xs` → `@2xs:*` — @container (width >= 18rem)
- * - `@xs` → `@xs:*` — @container (width >= 20rem)
- * - `@sm` → `@sm:*` — @container (width >= 24rem)
- * - `@md` → `@md:*` — @container (width >= 28rem)
- * - `@lg` → `@lg:*` — @container (width >= 32rem)
- * - `@xl` → `@xl:*` — @container (width >= 36rem)
- * - `@2xl` → `@2xl:*` — @container (width >= 42rem)
- * - `@3xl` → `@3xl:*` — @container (width >= 48rem)
- * - `@4xl` → `@4xl:*` — @container (width >= 56rem)
- * - `@5xl` → `@5xl:*` — @container (width >= 64rem)
- * - `@6xl` → `@6xl:*` — @container (width >= 72rem)
- * - `@7xl` → `@7xl:*` — @container (width >= 80rem)
+ * - `@xs` → `@xs:*` — @container (width >= **20rem**)
+ * - `@sm` → `@sm:*` — @container (width >= **24rem**)
+ * - `@md` → `@md:*` — @container (width >= **28rem**)
+ * - `@lg` → `@lg:*` — @container (width >= **32rem**)
+ * - `@xl` → `@xl:*` — @container (width >= **36rem**)
+ * - `@2xl` → `@2xl:*` — @container (width >= **42rem**)
+ * - `@3xl` → `@3xl:*` — @container (width >= **48rem**)
+ * - `@4xl` → `@4xl:*` — @container (width >= **56rem**)
+ * - `@5xl` → `@5xl:*` — @container (width >= **64rem**)
+ * - `@6xl` → `@6xl:*` — @container (width >= **72rem**)
+ * - `@7xl` → `@7xl:*` — @container (width >= **80rem**)
  *
  * **Custom**
- * - `@value` → `@<value>:*` — custom-defined breakpoint (e.g. `@srylius`)
+ * - `@value` → `@value:*` — custom-defined breakpoint (e.g. `@srylius`)
+ * - `@value/name` → `@value/name:*` — custom-defined named breakpoint (e.g. `@srylius/card`)
+ *
+ * ---
+ * _Custom keys (e.g. "@srylius") are supported if defined in your configuration file._
  */
-type ContainerBreakpoint =
-  | "base"
+type BreakpointContainer =
   | "@3xs" | "@2xs" | "@xs"
   | "@sm" | "@md" | "@lg" | "@xl"
   | "@2xl" | "@3xl" | "@4xl" | "@5xl" | "@6xl" | "@7xl"
   | `@${string}`
 
 /**
- * Container breakpoint range keys used for responsive traits between two container widths.
+ * Container breakpoint range keys used for queries spanning two widths ([See also](https://tailwindcss.com/docs/responsive-design#container-query-ranges))
  *
  * **Syntax**
- * - `@value:@max-value` → `@value:@max-value:*` — @container (width >= **value**) and (width < **max-value**)
+ * - `base` → `*` — applies without container query
  *
  * **Query**
  * - `@3xs:@max-2xs` → @container (width >= **16rem**) and (width < **18rem**)
- * - `@3xs:@max-xs`  → @container (width >= **16rem**) and (width < **20rem**)
- * - `@3xs:@max-sm`  → @container (width >= **16rem**) and (width < **24rem**)
- * - `@3xs:@max-md`  → @container (width >= **16rem**) and (width < **28rem**)
- * - `@3xs:@max-lg`  → @container (width >= **16rem**) and (width < **32rem**)
- * - `@3xs:@max-xl`  → @container (width >= **16rem**) and (width < **36rem**)
+ * - `@3xs:@max-xs` → @container (width >= **16rem**) and (width < **20rem**)
+ * - `@3xs:@max-sm` → @container (width >= **16rem**) and (width < **24rem**)
+ * - `@3xs:@max-md` → @container (width >= **16rem**) and (width < **28rem**)
+ * - `@3xs:@max-lg` → @container (width >= **16rem**) and (width < **32rem**)
+ * - `@3xs:@max-xl` → @container (width >= **16rem**) and (width < **36rem**)
  * - `@3xs:@max-2xl` → @container (width >= **16rem**) and (width < **42rem**)
  * - `@3xs:@max-3xl` → @container (width >= **16rem**) and (width < **48rem**)
  * - `@3xs:@max-4xl` → @container (width >= **16rem**) and (width < **56rem**)
  * - `@3xs:@max-5xl` → @container (width >= **16rem**) and (width < **64rem**)
  * - `@3xs:@max-6xl` → @container (width >= **16rem**) and (width < **72rem**)
  * - `@3xs:@max-7xl` → @container (width >= **16rem**) and (width < **80rem**)
- * - `@2xs:@max-xs`  → @container (width >= **18rem**) and (width < **20rem**)
- * - `@2xs:@max-sm`  → @container (width >= **18rem**) and (width < **24rem**)
- * - `@2xs:@max-md`  → @container (width >= **18rem**) and (width < **28rem**)
- * - `@2xs:@max-lg`  → @container (width >= **18rem**) and (width < **32rem**)
- * - `@2xs:@max-xl`  → @container (width >= **18rem**) and (width < **36rem**)
+ * - `@2xs:@max-xs` → @container (width >= **18rem**) and (width < **20rem**)
+ * - `@2xs:@max-sm` → @container (width >= **18rem**) and (width < **24rem**)
+ * - `@2xs:@max-md` → @container (width >= **18rem**) and (width < **28rem**)
+ * - `@2xs:@max-lg` → @container (width >= **18rem**) and (width < **32rem**)
+ * - `@2xs:@max-xl` → @container (width >= **18rem**) and (width < **36rem**)
  * - `@2xs:@max-2xl` → @container (width >= **18rem**) and (width < **42rem**)
  * - `@2xs:@max-3xl` → @container (width >= **18rem**) and (width < **48rem**)
  * - `@2xs:@max-4xl` → @container (width >= **18rem**) and (width < **56rem**)
  * - `@2xs:@max-5xl` → @container (width >= **18rem**) and (width < **64rem**)
  * - `@2xs:@max-6xl` → @container (width >= **18rem**) and (width < **72rem**)
  * - `@2xs:@max-7xl` → @container (width >= **18rem**) and (width < **80rem**)
- * - `@xs:@max-sm`  → @container (width >= **20rem**) and (width < **24rem**)
- * - `@xs:@max-md`  → @container (width >= **20rem**) and (width < **28rem**)
- * - `@xs:@max-lg`  → @container (width >= **20rem**) and (width < **32rem**)
- * - `@xs:@max-xl`  → @container (width >= **20rem**) and (width < **36rem**)
+ * - `@xs:@max-sm` → @container (width >= **20rem**) and (width < **24rem**)
+ * - `@xs:@max-md` → @container (width >= **20rem**) and (width < **28rem**)
+ * - `@xs:@max-lg` → @container (width >= **20rem**) and (width < **32rem**)
+ * - `@xs:@max-xl` → @container (width >= **20rem**) and (width < **36rem**)
  * - `@xs:@max-2xl` → @container (width >= **20rem**) and (width < **42rem**)
  * - `@xs:@max-3xl` → @container (width >= **20rem**) and (width < **48rem**)
  * - `@xs:@max-4xl` → @container (width >= **20rem**) and (width < **56rem**)
  * - `@xs:@max-5xl` → @container (width >= **20rem**) and (width < **64rem**)
  * - `@xs:@max-6xl` → @container (width >= **20rem**) and (width < **72rem**)
  * - `@xs:@max-7xl` → @container (width >= **20rem**) and (width < **80rem**)
- * - `@sm:@max-md`  → @container (width >= **24rem**) and (width < **28rem**)
- * - `@sm:@max-lg`  → @container (width >= **24rem**) and (width < **32rem**)
- * - `@sm:@max-xl`  → @container (width >= **24rem**) and (width < **36rem**)
+ * - `@sm:@max-md` → @container (width >= **24rem**) and (width < **28rem**)
+ * - `@sm:@max-lg` → @container (width >= **24rem**) and (width < **32rem**)
+ * - `@sm:@max-xl` → @container (width >= **24rem**) and (width < **36rem**)
  * - `@sm:@max-2xl` → @container (width >= **24rem**) and (width < **42rem**)
  * - `@sm:@max-3xl` → @container (width >= **24rem**) and (width < **48rem**)
  * - `@sm:@max-4xl` → @container (width >= **24rem**) and (width < **56rem**)
  * - `@sm:@max-5xl` → @container (width >= **24rem**) and (width < **64rem**)
  * - `@sm:@max-6xl` → @container (width >= **24rem**) and (width < **72rem**)
  * - `@sm:@max-7xl` → @container (width >= **24rem**) and (width < **80rem**)
- * - `@md:@max-lg`  → @container (width >= **28rem**) and (width < **32rem**)
- * - `@md:@max-xl`  → @container (width >= **28rem**) and (width < **36rem**)
+ * - `@md:@max-lg` → @container (width >= **28rem**) and (width < **32rem**)
+ * - `@md:@max-xl` → @container (width >= **28rem**) and (width < **36rem**)
  * - `@md:@max-2xl` → @container (width >= **28rem**) and (width < **42rem**)
  * - `@md:@max-3xl` → @container (width >= **28rem**) and (width < **48rem**)
  * - `@md:@max-4xl` → @container (width >= **28rem**) and (width < **56rem**)
  * - `@md:@max-5xl` → @container (width >= **28rem**) and (width < **64rem**)
  * - `@md:@max-6xl` → @container (width >= **28rem**) and (width < **72rem**)
  * - `@md:@max-7xl` → @container (width >= **28rem**) and (width < **80rem**)
- * - `@lg:@max-xl`  → @container (width >= **32rem**) and (width < **36rem**)
+ * - `@lg:@max-xl` → @container (width >= **32rem**) and (width < **36rem**)
  * - `@lg:@max-2xl` → @container (width >= **32rem**) and (width < **42rem**)
  * - `@lg:@max-3xl` → @container (width >= **32rem**) and (width < **48rem**)
  * - `@lg:@max-4xl` → @container (width >= **32rem**) and (width < **56rem**)
@@ -189,10 +196,13 @@ type ContainerBreakpoint =
  * - `@6xl:@max-7xl` → @container (width >= **72rem**) and (width < **80rem**)
  *
  * **Custom**
- * - `@value:@max-value` → `@value:@max-<value>:*` — custom-defined container range (e.g. `@card:@max-card`)
- * - `@value:@max-[value]` → `@value:@max-[value]:*` — arbitrary fixed container range (e.g. `@card:@max-[480px]`)
+ * - `@value:@max-value` → `@value:@max-value:*` — custom-defined container range (e.g. `@srylius:@max-srylius`)
+ * - `@value:@max-[value]` → `@value:@max-[value]:*` — arbitrary fixed container range (e.g. `@srylius:@max-[480px]`)
+ *
+ * ---
+ * _Custom keys (e.g. "@srylius", "@max-srylius") are supported if defined in your configuration file._
  */
-type BetweenContainerBreakpoint =
+type BreakpointContainerRange =
   | "@3xs:@max-2xs" | "@3xs:@max-xs" | "@3xs:@max-sm" | "@3xs:@max-md" | "@3xs:@max-lg" | "@3xs:@max-xl" | "@3xs:@max-2xl" | "@3xs:@max-3xl" | "@3xs:@max-4xl" | "@3xs:@max-5xl" | "@3xs:@max-6xl" | "@3xs:@max-7xl" | `@3xs:@max-${string}`
   | "@2xs:@max-xs" | "@2xs:@max-sm" | "@2xs:@max-md" | "@2xs:@max-lg" | "@2xs:@max-xl" | "@2xs:@max-2xl" | "@2xs:@max-3xl" | "@2xs:@max-4xl" | "@2xs:@max-5xl" | "@2xs:@max-6xl" | "@2xs:@max-7xl" | `@2xs:@max-${string}`
   | "@xs:@max-sm" | "@xs:@max-md"  | "@xs:@max-lg"  | "@xs:@max-xl"  | "@xs:@max-2xl" | "@xs:@max-3xl" | "@xs:@max-4xl" | "@xs:@max-5xl" | "@xs:@max-6xl" | "@xs:@max-7xl" | `@xs:@max-${string}`
@@ -208,42 +218,48 @@ type BetweenContainerBreakpoint =
   | `@${string}:@max-${string}`
 
 /**
- * The max breakpoint keys used for container responsive traits.
+ * Max container breakpoint keys used for container query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#max-width-container-queries))
  *
  * **Syntax**
- * - `base` → `*` — applies without max container query
+ * - `base` → `*` — applies without container query
  *
  * **Query**
- * - `@max-3xs` → `@max-3xs:*` — @container (width < 16rem)
- * - `@max-2xs` → `@max-2xs:*` — @container (width < 18rem)
- * - `@max-xs` → `@max-xs:*` — @container (width < 20rem)
- * - `@max-sm` → `@max-sm:*` — @container (width < 24rem)
- * - `@max-md` → `@max-md:*` — @container (width < 28rem)
- * - `@max-lg` → `@max-lg:*` — @container (width < 32rem)
- * - `@max-xl` → `@max-xl:*` — @container (width < 36rem)
- * - `@max-2xl` → `@max-2xl:*` — @container (width < 42rem)
- * - `@max-3xl` → `@max-3xl:*` — @container (width < 48rem)
- * - `@max-4xl` → `@max-4xl:*` — @container (width < 56rem)
- * - `@max-5xl` → `@max-5xl:*` — @container (width < 64rem)
- * - `@max-6xl` → `@max-6xl:*` — @container (width < 72rem)
- * - `@max-7xl` → `@max-7xl:*` — @container (width < 80rem)
+ * - `@max-3xs` → `@max-3xs:*` — @container (width < **16rem**)
+ * - `@max-2xs` → `@max-2xs:*` — @container (width < **18rem**)
+ * - `@max-xs` → `@max-xs:*` — @container (width < **20rem**)
+ * - `@max-sm` → `@max-sm:*` — @container (width < **24rem**)
+ * - `@max-md` → `@max-md:*` — @container (width < **28rem**)
+ * - `@max-lg` → `@max-lg:*` — @container (width < **32rem**)
+ * - `@max-xl` → `@max-xl:*` — @container (width < **36rem**)
+ * - `@max-2xl` → `@max-2xl:*` — @container (width < **42rem**)
+ * - `@max-3xl` → `@max-3xl:*` — @container (width < **48rem**)
+ * - `@max-4xl` → `@max-4xl:*` — @container (width < **56rem**)
+ * - `@max-5xl` → `@max-5xl:*` — @container (width < **64rem**)
+ * - `@max-6xl` → `@max-6xl:*` — @container (width < **72rem**)
+ * - `@max-7xl` → `@max-7xl:*` — @container (width < **80rem**)
  *
  * **Custom**
- * - `@max-value` → `@max-<value>:*` — custom-defined breakpoint (e.g. `@max-srylius`)
+ * - `@max-value` → `@max-value:*` — custom-defined max breakpoint (e.g. `@max-srylius`)
  * - `@max-[value]` → `@max-[value]:*` — arbitrary fixed max breakpoint (e.g. `@max-[480px]`)
+ *
+ * ---
+ * _Custom keys (e.g. "@max-srylius") are supported if defined in your configuration file._
  */
-type MaxContainerBreakpoint =
-  | "base"
+type BreakpointContainerMax =
   | "@max-3xs" | "@max-2xs" | "@max-xs"
   | "@max-sm" | "@max-md" | "@max-lg" | "@max-xl"
   | "@max-2xl" | "@max-3xl" | "@max-4xl" | "@max-5xl" | "@max-6xl" | "@max-7xl"
   | `@max-${string}`
 
+// Exports
 export type {
+  // Media
   Breakpoint,
-  BetweenBreakpoint,
-  ContainerBreakpoint,
-  MaxBreakpoint,
-  BetweenContainerBreakpoint,
-  MaxContainerBreakpoint
+  BreakpointMax,
+  BreakpointRange,
+
+  // Container
+  BreakpointContainer,
+  BreakpointContainerRange,
+  BreakpointContainerMax
 }
