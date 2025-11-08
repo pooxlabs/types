@@ -83,11 +83,14 @@ type BreakpointMin =
  * - `sm:max-lg` → `sm:max-lg:*` — @media (width >= **40rem**) and @media (width < **64rem**)
  * - `sm:max-xl` → `sm:max-xl:*` — @media (width >= **40rem**) and @media (width < **80rem**)
  * - `sm:max-2xl` → `sm:max-2xl:*` — @media (width >= **40rem**) and @media (width < **96rem**)
+ * ---
  * - `md:max-lg` → `md:max-lg:*` — @media (width >= **48rem**) and @media (width < **64rem**)
  * - `md:max-xl` → `md:max-xl:*` — @media (width >= **48rem**) and @media (width < **80rem**)
  * - `md:max-2xl` → `md:max-2xl:*` — @media (width >= **48rem**) and @media (width < **96rem**)
+ * ---
  * - `lg:max-xl` → `lg:max-xl:*` — @media (width >= **64rem**) and @media (width < **80rem**)
  * - `lg:max-2xl` → `lg:max-2xl:*` — @media (width >= **64rem**) and @media (width < **96rem**)
+ * ---
  * - `xl:max-2xl` → `xl:max-2xl:*` — @media (width >= **80rem**) and @media (width < **96rem**)
  *
  * **Custom**
@@ -215,6 +218,7 @@ type BreakpointContainerMin =
  * - `@value:@max-value` → `@value:@max-value:*` — @container (width >= **value**) and (width < **max-value**)
  * - `@value/name:@max-value` → `@value/name:@max-value:*` —  @container **name** (width >= **value**) and (width < **max-value**)
  * - `@value:@max-value/name` → `@value:@max-value/name:*` —  @container **name** (width >= **value**) and (width < **max-value**)
+ * - `@value/name:@max-value/name` → `@value/name:@max-value/name:*` —  @container **name** (width >= **value**) and (width < **max-value**)
  *
  * **Query**
  * - `@3xs:@max-2xs` → `@3xs:@max-2xs:*` — @container (width >= **16rem**) and (width < **18rem**)

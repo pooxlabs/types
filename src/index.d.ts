@@ -11,7 +11,7 @@ export type {
   BreakpointContainerMax,
   BreakpointContainerMin,
   BreakpointContainerRange
-} from "./interface/core/breakpoint"
+} from "./interface/concept/breakpoint"
 
 // Responsive
 export type {
