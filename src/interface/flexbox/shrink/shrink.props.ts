@@ -13,9 +13,9 @@ type ShrinkProps = {
    * **Syntax**
    * - `{ *: "value" }` → `*:shrink-value` — applies a **shrink factor** at the given breakpoint
    *
-   * **Scale**
-   * - `{ shrink: 0 }` → `shrink-0` — disables shrinking
-   * - `{ shrink: 1 }` → `shrink-1` — enables shrinking
+   * **Shrink**
+   * - `{ shrink: 0 }` → `shrink-0` — disables **shrinking**
+   * - `{ shrink: 1 }` → `shrink-1` — enables **shrinking**
    *
    * **Custom**
    * - `{ *: number }` → `*:shrink-number` — applies a **scale-based** shrink factor at the given breakpoint
@@ -55,6 +55,5 @@ type ShrinkProps = {
 
 // Exports
 export type {
-  // Spacing
   ShrinkProps
 }

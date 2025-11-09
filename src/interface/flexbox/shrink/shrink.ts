@@ -4,7 +4,7 @@
  * **Syntax**
  * - `value` → `shrink-value` — applies shrink factor from the **value** scale
  *
- * **Scale**
+ * **Shrink**
  * - `0` → `shrink-0` — disables shrinking
  * - `1` → `shrink-1` — enables shrinking
  *

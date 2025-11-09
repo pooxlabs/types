@@ -13,9 +13,9 @@ type GrowProps = {
    * **Syntax**
    * - `{ *: "value" }` → `*:grow-value` — applies a **grow factor** at the given breakpoint
    *
-   * **Scale**
-   * - `{ grow: 0 }` → `grow-0` — disables growing
-   * - `{ grow: 1 }` → `grow-1` — enables growing
+   * **Grow**
+   * - `{ grow: 0 }` → `grow-0` — disables **growing**
+   * - `{ grow: 1 }` → `grow-1` — enables **growing**
    *
    * **Custom**
    * - `{ *: number }` → `*:grow-number` — applies a **scale-based** grow factor at the given breakpoint
@@ -38,7 +38,7 @@ type GrowProps = {
    * <Component grow={{ base: 0, "2xl": 1 }} /> // → grow-0 2xl:grow-1
    *
    * // Override with arbitrary grow factor
-   * <Component grow={{ base: 1, xl: "[calc(100vw-var(--srylius))]" }} /> // → grow-1 xl:grow-[calc(100vw-var(--srylius))]
+   * <Component grow={{ base: 1, xl: "[25vw]" }} /> // → grow-1 xl:grow-[25vw]
    *
    * // Override with CSS variable
    * <Component grow={{ base: 0, md: "(--srylius)" }} /> // → grow-0 md:grow-(--srylius)

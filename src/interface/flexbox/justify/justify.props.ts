@@ -1,9 +1,11 @@
 import type {
+  // Justify
   Justify,
   JustifyContent,
   JustifyItem,
   JustifySelf,
 
+  // Query
   ResponsiveQuery
 } from "@pooxlabs/types"
 

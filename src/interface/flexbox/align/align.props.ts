@@ -1,9 +1,11 @@
 import type {
+  // Align
   Align,
   AlignContent,
   AlignItem,
   AlignSelf,
 
+  // Query
   ResponsiveQuery
 } from "@pooxlabs/types"
 

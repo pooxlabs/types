@@ -3,15 +3,18 @@
  *
  * **Syntax**
  * - `value` → `order-value` — applies order from the **value** scale
+ * - `-value` → `-order-value` — applies order from the **negative value** scale
  *
- * **Scale**
- * - `none` → `order-none` — default order (`order: 0`)
- * - `first` → `order-first` — forces item to appear first (`order: -9999`)
- * - `last` → `order-last` — forces item to appear last (`order: 9999`)
- * - `0` → `order-0` — default numeric order
- * - `1` → `order-1` — moves item forward
- * - `2` → `order-2` — moves item further forward
- * - `-1` → `-order-1` — moves item backward (if negative is enabled)
+ * **Order**
+ * - `-1` → `-order-1` — moves item **backward**
+ * - `0` → `order-0` — default **numeric order**
+ * - `1` → `order-1` — moves item **forward**
+ * - `2` → `order-2` — moves item **further forward**
+ *
+ * **Order (Predefined)**
+ * - `none` → `order-none` — default order **(order: 0)**
+ * - `first` → `order-first` — forces item to appear first **(order: -9999)**
+ * - `last` → `order-last` — forces item to appear last **(order: 9999)**
  *
  * **Custom**
  * - `number` → `order-number` — resolved **automatically**
@@ -45,10 +48,10 @@
  * _Custom values (e.g. "--srylius") are supported if defined in your configuration file._
  */
 type Order =
-  | number
   | "first"
   | "last"
   | "none"
+  | number
   | `[${string}]`
   | `(${string})`
 

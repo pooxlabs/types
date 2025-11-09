@@ -1,9 +1,11 @@
 import type {
+  // Place
   Place,
   PlaceContent,
   PlaceItem,
   PlaceSelf,
 
+  // Query
   ResponsiveQuery
 } from "@pooxlabs/types"
 

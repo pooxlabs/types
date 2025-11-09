@@ -1,8 +1,10 @@
 import type {
+  // Gap
   Gap,
   GapX,
   GapY,
 
+  // Query
   ResponsiveQuery
 } from "@pooxlabs/types"
 
