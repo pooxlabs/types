@@ -35,6 +35,16 @@ export type {
   GapProps
 } from "./spacing/spacing.props"
 
+// Grow
+export type {
+  Grow
+} from "./grow/grow"
+
+// Grow (Props)
+export type {
+  GrowProps
+} from "./grow/grow.props"
+
 // Shrink
 export type {
   Shrink
