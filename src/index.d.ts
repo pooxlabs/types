@@ -15,10 +15,6 @@ export type {
 
 // Responsive
 export type {
-  // Common
-  ResponsiveValue,
-  ResponsiveScope,
-
   // Media
   Responsive,
   ResponsiveMax,

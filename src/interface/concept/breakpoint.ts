@@ -12,7 +12,7 @@
  * - `2xl` → `2xl:*` — @media (width >= **96rem**)
  *
  * **Custom**
- * - `value` → `value:*` — custom-defined max breakpoint (e.g. `srylius`)
+ * - `value` → `value:*` — custom-defined breakpoint (e.g. `srylius`)
  *
  * ---
  * _Custom keys (e.g. "srylius") are supported if defined in your configuration file._
@@ -23,7 +23,7 @@ type Breakpoint =
   | `${string}`
 
 /**
- * Max breakpoint keys used for media query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#targeting-a-breakpoint-range))
+ * Max breakpoint keys used for media query-based responsive traits ([See also](https://tailwindcss.com/docs/responsive-design#using-arbitrary-values))
  *
  * **Syntax**
  * - `max-value` → `max-value:*` — @media (width < **max-value**)
@@ -48,7 +48,7 @@ type BreakpointMax =
   | `max-${string}`
 
 /**
- * Min breakpoint keys used for media query-based responsive traits.
+ * Min breakpoint keys used for media query-based responsive traits. ([See also](https://tailwindcss.com/docs/responsive-design#using-arbitrary-values))
  *
  * **Syntax**
  * - `min-value` → `min-value:*` — @media (width >= **min-value**)
@@ -177,7 +177,7 @@ type BreakpointContainerMax =
   | `@max-${string}`
 
 /**
- * Min container breakpoint keys used for container query-based responsive traits.
+ * Min container breakpoint keys used for container query-based responsive traits. ([See also](https://tailwindcss.com/docs/responsive-design#using-arbitrary-container-query-values))
  *
  * **Syntax**
  * - `@min-value` → `@min-value:*` — @container (width >= **min-value**)
