@@ -10,7 +10,7 @@ import type {
   BreakpointContainerMax,
   BreakpointContainerMin,
   BreakpointContainerRange
-} from "@pooxlabs/types"
+} from "@srylius/types"
 
 /**
  * Responsive trait mapping across media breakpoints.
@@ -86,13 +86,13 @@ type Responsive<T extends object | boolean | string | number> = T | Partial<Reco
  * <Component prop={{ base: "value", max-lg: "override" }} />
  * <Component prop={{ base: "value", max-xl: "override" }} />
  * <Component prop={{ base: "value", max-2xl: "override" }} />
-
+ *
  * // Override at an arbitrary breakpoint
  * <Component prop={{ base: "value", "max-[960px]": "override" }} />
-
+ *
  * // Override at multiple breakpoints
  * <Component prop={{ base: "value", max-sm: "override", max-lg: "override" }} />
-
+ *
  * // Override at a custom-defined breakpoint
  * <Component prop={{ base: "value", max-srylius: "override" }} />
  * ```

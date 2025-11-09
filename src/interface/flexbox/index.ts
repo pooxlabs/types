@@ -1,56 +1,15 @@
-// Alignment
-export type {
-  Justify,
-  JustifyContent,
-  JustifyItem,
-  JustifySelf,
+// Type
+export type { Align, AlignContent, AlignItem, AlignSelf } from "./align/align"
+export type { Gap, GapX, GapY } from "./gap/gap"
+export type { Grow } from "./grow/grow"
+export type { Justify, JustifyContent, JustifyItem, JustifySelf } from "./justify/justify"
+export type { Place, PlaceContent, PlaceItem, PlaceSelf } from "./place/place"
+export type { Shrink } from "./shrink/shrink"
 
-  Align,
-  AlignContent,
-  AlignItem,
-  AlignSelf,
-
-  Place,
-  PlaceContent,
-  PlaceItem,
-  PlaceSelf
-} from "./alignment/alignment"
-
-// Alignment (Props)
-export type {
-  JustifyProps,
-  AlignProps,
-  PlaceProps
-} from "./alignment/alignment.props"
-
-// Spacing
-export type {
-  Gap,
-  GapX,
-  GapY
-} from "./spacing/spacing"
-
-// Spacing (Props)
-export type {
-  GapProps
-} from "./spacing/spacing.props"
-
-// Grow
-export type {
-  Grow
-} from "./grow/grow"
-
-// Grow (Props)
-export type {
-  GrowProps
-} from "./grow/grow.props"
-
-// Shrink
-export type {
-  Shrink
-} from "./shrink/shrink"
-
-// Spacing (Props)
-export type {
-  ShrinkProps
-} from "./shrink/shrink.props"
+// Type (Props)
+export type { AlignProps } from "./align/align.props"
+export type { GapProps } from "./gap/gap.props"
+export type { GrowProps } from "./grow/grow.props"
+export type { JustifyProps } from "./justify/justify.props"
+export type { PlaceProps } from "./place/place.props"
+export type { ShrinkProps } from "./shrink/shrink.props"

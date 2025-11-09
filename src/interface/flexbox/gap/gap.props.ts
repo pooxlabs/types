@@ -1,10 +1,8 @@
 import type {
-  // Spacing
   Gap,
   GapX,
   GapY,
 
-  // Query
   ResponsiveQuery
 } from "@pooxlabs/types"
 
@@ -159,6 +157,5 @@ type GapProps = {
 
 // Exports
 export type {
-  // Spacing
   GapProps
 }

@@ -4,7 +4,7 @@ import type {
 
   // Query
   ResponsiveQuery
-} from "@srylius/types"
+} from "@pooxlabs/types"
 
 type GrowProps = {
   /**

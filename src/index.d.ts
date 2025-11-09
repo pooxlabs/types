@@ -1,4 +1,4 @@
-// Breakpoint
+// Breakpoints
 export type * from "./interface/concept/breakpoint"
 
 // Responsive
