@@ -1,18 +1,15 @@
 // Alignment
 export type {
-  // Justify
   Justify,
   JustifyContent,
   JustifyItem,
   JustifySelf,
 
-  // Align
   Align,
   AlignContent,
   AlignItem,
   AlignSelf,
 
-  // Place
   Place,
   PlaceContent,
   PlaceItem,
@@ -21,19 +18,13 @@ export type {
 
 // Alignment (Props)
 export type {
-  // Justify
   JustifyProps,
-
-  // Align
   AlignProps,
-
-  // Place
   PlaceProps
 } from "./alignment/alignment.props"
 
 // Spacing
 export type {
-  // Gap
   Gap,
   GapX,
   GapY
@@ -41,6 +32,15 @@ export type {
 
 // Spacing (Props)
 export type {
-  // Gap
   GapProps
 } from "./spacing/spacing.props"
+
+// Shrink
+export type {
+  Shrink
+} from "./shrink/shrink"
+
+// Spacing (Props)
+export type {
+  ShrinkProps
+} from "./shrink/shrink.props"
