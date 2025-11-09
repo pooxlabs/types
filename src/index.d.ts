@@ -1,31 +1,8 @@
-// Breakpoints
-export type {
-  // Media
-  Breakpoint,
-  BreakpointMax,
-  BreakpointMin,
-  BreakpointRange,
-
-  // Container
-  BreakpointContainer,
-  BreakpointContainerMax,
-  BreakpointContainerMin,
-  BreakpointContainerRange
-} from "./interface/concept/breakpoint"
+// Breakpoint
+export type * from "./interface/concept/breakpoint"
 
 // Responsive
-export type {
-  // Media
-  Responsive,
-  ResponsiveMax,
-  ResponsiveMin,
-  ResponsiveRange,
-  ResponsiveQuery,
+export type * from "./interface/concept/responsive"
 
-  // Container
-  ContainerResponsive,
-  ContainerResponsiveMax,
-  ContainerResponsiveMin,
-  ContainerResponsiveRange,
-  ContainerResponsiveQuery
-} from "./interface/concept/responsive"
+// Flexbox
+export type * from "./interface/flexbox"
