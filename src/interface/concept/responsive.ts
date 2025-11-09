@@ -10,7 +10,7 @@ import type {
   BreakpointContainerMax,
   BreakpointContainerMin,
   BreakpointContainerRange
-} from "@srylius/types"
+} from "@pooxlabs/types"
 
 /**
  * Responsive trait mapping across media breakpoints.
