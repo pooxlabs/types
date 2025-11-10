@@ -7,6 +7,7 @@ export type { Justify, JustifyContent, JustifyItem, JustifySelf } from "./justif
 export type { Order } from "./order/order"
 export type { Place, PlaceContent, PlaceItem, PlaceSelf } from "./place/place"
 export type { Shrink } from "./shrink/shrink"
+export type { FlexWrap } from "./wrap/wrap"
 
 // Type (Props)
 export type { AlignProps } from "./align/align.props"
@@ -17,3 +18,4 @@ export type { JustifyProps } from "./justify/justify.props"
 export type { OrderProps } from "./order/order.props"
 export type { PlaceProps } from "./place/place.props"
 export type { ShrinkProps } from "./shrink/shrink.props"
+export type { FlexWrapProps } from "./wrap/wrap.props"
