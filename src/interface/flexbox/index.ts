@@ -1,5 +1,6 @@
 // Type
 export type { Align, AlignContent, AlignItem, AlignSelf } from "./align/align"
+export type { FlexBasis } from "./basis/basis"
 export type { FlexDirection } from "./direction/direction"
 export type { Gap, GapX, GapY } from "./gap/gap"
 export type { Grow } from "./grow/grow"
@@ -11,6 +12,7 @@ export type { FlexWrap } from "./wrap/wrap"
 
 // Type (Props)
 export type { AlignProps } from "./align/align.props"
+export type { FlexBasisProps } from "./basis/basis.props"
 export type { FlexDirectionProps } from "./direction/direction.props"
 export type { GapProps } from "./gap/gap.props"
 export type { GrowProps } from "./grow/grow.props"
